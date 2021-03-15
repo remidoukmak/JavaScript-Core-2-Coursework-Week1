@@ -24,4 +24,52 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {};
+let recipes = {
+  Fatteh: {
+    serves: 7,
+    ingredients: ["Chick Peas", "Flat Bread", "Lemon Juice", "Cumin"],
+  },
+  "Lentil Soup": {
+    serves: 5,
+    ingredients: ["Green Lentil", "Chicken stock", "Rice", "Seven spices"],
+  },
+  Kebbeh: {
+    serves: 6,
+    ingredients: ["Mince Meat", "Onions", "Bulgur", "Butter", "Walnut "],
+  },
+  Kunafa: {
+    serves: 3,
+    ingredients: [
+      "Small Pasta",
+      "Double Cream",
+      "Mozorella",
+      "Halloumi Cheese",
+      "Golden Syrup",
+    ],
+  },
+  "Fish and Chips": {
+    serves: 2,
+    ingredients: [
+      "Salmon Fillet",
+      "Sweet Potato",
+      "Broccoli",
+      "Mashed Peas",
+      "Gravy",
+    ],
+  },
+};
+
+console.log(recipes);
+for (let key of Object.keys(recipes)) {
+  let emptySpace = "";
+  for (let key2 of Object.values(recipes[key].ingredients)) {
+    emptySpace = emptySpace.concat(key2).concat("\n");
+  }
+  console.log(
+    key
+      .concat("\nServes:")
+      .concat(recipes[key].serves)
+      .concat("\nIngredients:\n")
+      .concat(emptySpace.split(",").join(": "))
+  );
+}
